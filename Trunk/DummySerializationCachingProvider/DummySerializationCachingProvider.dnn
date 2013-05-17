@@ -1,0 +1,66 @@
+﻿<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="DummySerializationCachingProvider" type="Provider" version="01.00.01">
+      <friendlyName>DotNetNuke Dummy Serialization Caching Provider</friendlyName>
+      <description>Provides a tool to verify if the objects being cached are serializable</description>
+      <iconFile>~/DesktopModules/CloudControlbar/images/DNNCloudServices.png</iconFile>      
+      <owner>
+        <name>DotNetNuke Corporation</name>
+        <organization>DotNetNuke Corporation</organization>
+        <url>http://www.dotnetnuke.com</url>
+        <email>david.rodriguez@dotnetnuke.com</email>
+      </owner>
+      <license src="License.txt"></license>
+      <releaseNotes src="ReleaseNotes.txt"></releaseNotes>
+      <dependencies>
+        <dependency type="CoreVersion">07.00.00</dependency>
+      </dependencies>
+      
+      <components>
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>Providers/CachingProviders/DummySerializationCachingProvider</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>        
+
+        <!-- web.config -->
+        <component type="Config">
+          <config>
+            <configFile>web.config</configFile>
+            <install>
+              <configuration>
+                <nodes>
+                  <node path="/configuration/dotnetnuke/caching" action="updateattribute" name="defaultProvider" value="DummySerializationCachingProvider" />
+                  <node path="/configuration/dotnetnuke/caching/providers" action="update" key="name" collision="overwrite">
+                    <add name="DummySerializationCachingProvider"
+				                type="DotNetNuke.Providers.CachingProviders.DummySerializationCachingProvider.DummySerializationCachingProvider, DotNetNuke.Caching.DummySerializationCachingProvider"
+				                providerPath="~\Providers\CachingProviders\DummySerializationCachingProvider\" useCompression="false" />
+                  </node>                                    
+                </nodes>
+              </configuration>
+            </install>
+            <uninstall>
+              <configuration>
+                <nodes>
+                  <node path="/configuration/dotnetnuke/caching" action="updateattribute" name="defaultProvider" value="FileBasedCachingProvider" />
+                  <node path="/configuration/dotnetnuke/caching/providers/add[@name='DummySerializationCachingProvider']" action="remove" />
+                </nodes>
+              </configuration>
+            </uninstall>
+          </config>
+        </component>
+        <component type="Assembly">
+          <assemblies>
+            <basePath>bin/Providers</basePath>
+            <assembly>
+              <name>DotNetNuke.Caching.DummySerializationCachingProvider.dll</name>
+            </assembly>
+          </assemblies>
+        </component>
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>

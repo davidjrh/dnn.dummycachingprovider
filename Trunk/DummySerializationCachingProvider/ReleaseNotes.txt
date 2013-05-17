@@ -1,0 +1,7 @@
+﻿<p style="margin: 0"><b>DotNetNuke Dummy Serialization Caching Provider</b></p>
+<p style="margin: 0">DotNetNuke Corporation<br /><a href="mailto:david.rodriguez@dnncorp.com">david.rodriguez@dnncorp.com</a><br /><a href="http://dnndummycaching.codeplex.com">http://dnndummycaching.codeplex.com</a></p>
+<p style="margin: 0"><strong>About the DotNetNuke Dummy Serialization Caching Provider</strong></p>
+<p style="margin: 0"><b>Version 01.00.00</b></p>
+<p style="margin: 0">This caching provider is a tool to verify that all the objects in cache are serializable. If you try to insert an object that does not supports serialization, an exception will be thrown.</p>
+<p style="margin: 0"><b>Version 01.00.01</b></p>
+<p style="margin: 0">Fixed the namespace of the caching provider</p>
