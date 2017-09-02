@@ -1,12 +1,12 @@
 # DNN Dummy Caching Provider
 >![](Home_DummyDNN.png)
-This caching provider allows you to verify that your module code suits the “out-of-process” caching requirements of cache systems like Windows Azure Caching
+This caching provider allows you to verify that your module code suits the “out-of-process” caching requirements of cache systems like Redis Caching
 
-**Do you want to create modules that are Windows Azure compatible? Are you going to use other out-of-process caching providers like AppFabric or memcached? Do you want your modules to meet DotNetNuke webfarm requirements?**
+**Do you want to create modules that are Microsoft Azure compatible? Are you going to use other out-of-process caching providers like Redis or memcached? Do you want your modules to meet DotNetNuke webfarm requirements?**
 
-This caching provider **allows you to verify in your development environment** that the running code suits the “out-of-process” caching requirements, what means that **all the cached objects must be serializable**. While working on development, creating unit tests, etc. using this caching provider is highly recommended in order to create code that is [Windows Azure Cache](http://www.windowsazure.com/en-us/develop/net/how-to-guides/cache/) compatible (and compatible with other caches, like memcached, etc.).
+This caching provider **allows you to verify in your development environment** that the running code suits the “out-of-process” caching requirements, what means that **all the cached objects must be serializable**. While working on development, creating unit tests, etc. using this caching provider is highly recommended in order to create code that is compatible with out of process caches.
 
->![EVS](Home_EVSDotNetNuke.gif)Remember that another good source for verifying Windows Azure compatibility is to use the [DotNetNuke Extension Verification Service](http://evs.dotnetnuke.com/), that runs SQL Azure compatibility checks including real operations on an SQL Azure database.
+>![EVS](Home_EVSDotNetNuke.gif)Remember that another good source for verifying Microsoft Azure compatibility is to use the [DotNetNuke Extension Verification Service](http://evs.dotnetnuke.com/), that runs SQL Azure compatibility checks including real operations on an SQL Azure database.
 
 ## Release Notes
 * Changes the default caching provider on the web.config to “DummySerializationCachingProvider”
